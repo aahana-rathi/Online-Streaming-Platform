@@ -892,7 +892,7 @@ elif selected_tab == "👤 User Dashboard":
         "actor_movies": ["Inception","Titanic","The Revenant"],
         "similar_movies": ["Shadow Protocol","Laugh Lines","Forever and Always"]},
         9: {"movie": "Whispers in the Dark", "actor": "Scarlett Johansson",
-        "movie_poster": “images/whispersinthedark.jpeg",
+        "movie_poster": "images/whispersinthedark.jpeg",
         "actor_img": "images/scarlettjohanson.jpeg",
         "actor_movies": ["Lucy","Marriage Story","Lost in Translation"],
         "similar_movies": ["Echoes of Silence","Hearts Entwined","Accidentally Perfect"]},
@@ -1068,6 +1068,7 @@ elif selected_tab == "👤 User Dashboard":
         if st.button("🔓 Logout"):
             st.session_state.logged_in_user = None
             st.experimental_rerun()
+
 
 
 
