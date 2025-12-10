@@ -982,7 +982,7 @@ elif selected_tab == "👤 User Dashboard":
 "Inception":"images/inception.jpeg",
 "Titanic":"images/titanic.jpeg",
 "The Revenant":"images/therevenant.jpeg",
-“La La Land":"images/.lalalandjpeg",
+"La La Land":"images/.lalalandjpeg",
 "Easy A":"images/.easyajpeg",
 "The Favourite":"images/.thefavouritejpeg",
 "Forrest Gump":"images/forrestgump.jpeg",
@@ -1068,6 +1068,7 @@ elif selected_tab == "👤 User Dashboard":
         if st.button("🔓 Logout"):
             st.session_state.logged_in_user = None
             st.experimental_rerun()
+
 
 
 
