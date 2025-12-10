@@ -1,11 +1,11 @@
 import streamlit as st
-from PIL import Image
+
 import pandas as pd
 
 
 # ============================
 # PAGE CONFIG
-
+# ============================
 st.set_page_config(page_title="Online Streaming Platform DBMS Project", layout="wide")
 
 st.markdown(
@@ -59,12 +59,6 @@ if selected_tab == "📘 Project Overview":
       and executed various **queries** to analyze user data, content, and revenue.  
     - The results and database structure were displayed through an interactive **Streamlit dashboard**, 
       enabling easy navigation and visualization.
-    - Managing this data efficiently is crucial for:
-        - Smooth user experience
-        - Personalized recommendations
-        - Business analytics and insights
-    
-
     """)
 
 # --------------------------- OBJECTIVES TAB ---------------------------
@@ -119,7 +113,7 @@ if selected_tab == "📘 Project Overview":
 # TAB 1 — ROADMAP
 # ============================
 if selected_tab == "🔖 Roadmap / Index":
-    st.header("📝 Project Roadmap")
+    st.header("📝 Project Roadmap / Index")
     st.markdown("""
     Welcome to the **Online Streaming Platform DBMS Dashboard**.  
     Use this roadmap to navigate through different project components:
@@ -185,16 +179,11 @@ elif selected_tab == "🔗 Relationships (ER Diagram)":
     """)
 
 
-    st.image("/Users/reineepanjabi/Downloads/WhatsApp Image 2025-10-19 at 22.43.01.jpeg", caption="Uploaded ER Diagram")
-    st.image("/Users/reineepanjabi/Downloads/Untitled Diagram.drawio.png")
-    st.header("Extended ER diagrams")
-    col1,col2,col3=st.columns(3)
-    with col1:
-        st.image("/Users/reineepanjabi/Desktop/Screenshot 2025-10-28 at 3.20.13 AM.png")
-    with col2:
-        st.image("/Users/reineepanjabi/Desktop/Screenshot 2025-10-28 at 3.20.17 AM.png")
-    with col3:
-        st.image("/Users/reineepanjabi/Desktop/Screenshot 2025-10-28 at 3.20.23 AM.png")
+    st.image("images/erdiag1.jpeg", caption="Uploaded ER Diagram")
+    st.image("images/erdiag2.jpeg", caption="Uploaded ER Diagram")
+    st.image("images/extendeder1.jpeg", caption="Extended ER Diagram")
+    st.image("images/extendeder2.jpeg", caption="Extended ER Diagram")
+
 # ============================
 # TAB 4 — CREATE TABLES
 # ============================
@@ -232,7 +221,6 @@ INTO User1 VALUES(9, 'Sophia Garcia', 'sophia@example.com', 'password555', 38)
 INTO User1 VALUES(10, 'Ethan Lee', 'ethan.lee@example.com', 'password666', 29)
 select * from dual
 select * from User1
-
 """,
         "Plan": """CREATE TABLE Plan (
     plan_id INT PRIMARY KEY,
@@ -269,6 +257,7 @@ INTO Subscription Values(1009, 9, 102, '01-JAN-2023', '31-DEC-2024')
 INTO Subscription Values(1010,10, 103, '01-JUN-2023', '31-MAY-2024')
 select * from dual
 select * from Subscription
+
 """,
         "Genre": """CREATE TABLE Genre (
     genre_id INT PRIMARY KEY,
@@ -284,6 +273,7 @@ INTO Genre values(44, 'Horror')
 INTO Genre values(55, 'Romance')
 select * from dual
 select * from genre
+
 """,
         "Content": """CREATE TABLE Content (
     content_id INT PRIMARY KEY,
@@ -331,6 +321,7 @@ INTO Review VALUES(909, 9, 209, 4, 'Great horror movie, very intense!')
 INTO Review VALUES(910, 10, 210, 4, 'Nice romantic series, great chemistry!')
 SELECT * FROM dual
 SELECT * FROM Review
+
 """,
         "Watch_History": """CREATE TABLE Watch_History (
     history_id INT PRIMARY KEY,
@@ -376,8 +367,9 @@ INTO Device VALUES(808, 8, 'Laptop', 'HP Spectre x360')
 INTO Device VALUES(809, 9, 'Mobile', 'Google')
 Select * from dual
 Select * from Device
+
 """,
-        "Payment": """CCREATE TABLE Payment (
+        "Payment": """CREATE TABLE Payment (
     payment_id INT PRIMARY KEY,
     subscription_id INT,
     amount DECIMAL(10, 2),
@@ -418,6 +410,7 @@ INSERT ALL
   INTO Actor VALUES(310, 'Jennifer Lawrence', '15-AUG-1990')
 SELECT * FROM dual;
 Select * from Actor
+
 """,
         "Content_Actor": """CREATE TABLE Content_Actor (
     content_id INT,
@@ -447,17 +440,17 @@ Select * from Content_Actor
 
     # Add this dictionary to map each table to its image
     table_images = {
-    "User": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.25.56 PM.png",
-    "Plan": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.26.14 PM.png",
-    "Subscription": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.26.23 PM.png",
-    "Genre": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.26.29 PM.png",
-    "Content": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.26.35 PM.png",
-    "Review": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.26.44 PM.png",
-    "Watch_History": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.26.51 PM.png",
-    "Device": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.26.57 PM.png",
-    "Payment": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.27.06 PM.png",
-    "Actor": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.27.12 PM.png",
-    "Content_Actor": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.27.18 PM.png"
+    "User": "images/table1.jpeg",
+    "Plan": "images/table2.jpeg",
+    "Subscription": "images/table3.jpeg",
+    "Genre": "images/table4.jpeg",
+    "Content": "images/table5.jpeg",
+    "Review": "images/table6.jpeg",
+    "Watch_History": "images/table7.jpeg",
+    "Device": "images/table8.jpeg",
+    "Payment": "images/table9.jpeg",
+    "Actor": "images/table10.jpeg",
+    "Content_Actor": "images/table11.jpeg"
 }
 
     # Display image for each table automatically
@@ -595,61 +588,62 @@ ORDER BY r.rating DESC;
 
     query_images = {
         "QUERY 1 — Top 3 Most Popular Genres Based on Watch Count": [
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.31.06 PM.png",
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.30.56 PM.png"
+            "images/table12.jpeg",
+            "images/query1explain.jpeg"
         ],
         "QUERY 2 — Total Revenue Generated by Each Subscription Plan": [
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.32.03 PM.png",
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.31.48 PM.png"
+            "images/query2ans.jpeg",
+            "images/query2explain.jpeg"
         ],
 
         "QUERY 3 — Highest Rated Content Titles": [
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.33.11 PM.png",
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.32.40 PM.png"
+            "images/query3ans.jpeg",
+            "images/query3explain.jpeg"
             ],
 
         "QUERY 4 — Actor-Wise Average Content Rating": [
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.37.42 PM.png",
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.33.59 PM.png"
+            "images/query4ans.jpeg",
+            "images/query4explain.jpeg"
             ] ,
 
         "QUERY 5 — Average Revenue Per User (ARPU)": [
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.37.58 PM.png",
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.34.06 PM.png"
+            "images/query5ans.jpeg",
+            "images/query5explain.jpeg"
             ],
 
         "QUERY 6 — Users Whose Subscription Expires Within 60 Days": [
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.38.07 PM.png"
+            "images/query6ans.jpeg",
+            "images/query6explain.jpeg"
             ],
 
         "QUERY 7 — Average Watch Completion (%) per Genre": [
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.38.14 PM.png",
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.34.30 PM.png"
+            "images/query7ans.jpeg",
+            "images/query7explain.jpeg"
             ],
 
         "QUERY 8 — Find Users Who Posted More Than or equal to One Review":[
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.38.27 PM.png",
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.34.37 PM.png"
+            "images/query8ans.jpeg",
+            "images/query8explain.jpeg"
             ],
 
         "QUERY 9 — Most Popular Actor (Based on Number of Watched Contents)": [
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.38.39 PM.png",
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.34.45 PM.png"
+            "images/query9ans.jpeg",
+            "images/query9explain.jpeg"
             ],
 
         "QUERY 10 — Genre-Wise Revenue (Advanced Multi-Join)": [
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.38.47 PM.png",
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.34.52 PM.png"
+            "images/query10ans.jpeg",
+            "images/query10explain.jpeg"
             ],
 
         "QUERY 11 — Most Popular Content Type (Movie or Series) by Average User Rating": [
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.38.57 PM.png",
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.34.59 PM.png"
+            "images/query11ans.jpeg",
+            "images/query11explain.jpeg"
             ],
 
         "QUERY 12 — Users Who Have Rated Content Above the Average Rating (Subquery)":[
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.39.09 PM.png",
-            "/Users/reineepanjabi/Desktop/Screenshot 2025-10-22 at 2.35.07 PM.png"
+            "images/query12ans.jpeg",
+            "images/query12explain.jpeg"
             ]
        }
 
@@ -740,44 +734,37 @@ ORDER BY r.rating DESC;
 
     
     df = queries_data[selected_query]
-    col1,col2=st.columns(2)
-    with col1:
-        st.dataframe(df)
-        if df is not None and not df.empty:
-            numeric_cols = df.select_dtypes(include=['number']).columns.tolist()
-            if numeric_cols:
-                col_to_plot = numeric_cols[0] 
-    
-        max_val = df[col_to_plot].max()
-        max_idx = df[df[col_to_plot] == max_val][df.columns[0]].values[0]
-
-        min_val = df[col_to_plot].min()
-        min_idx = df[df[col_to_plot] == min_val][df.columns[0]].values[0]
-
-    with col2:
-        col1, col2 = st.columns(2)
-        with col1:
-            st.metric(label="Highest Value", value=f"{max_val}", delta=f"{max_idx}")
-        with col2:
-            st.metric(label="Lowest Value", value=f"{min_val}", delta=f"{min_idx}")
-        try:
-            st.bar_chart(data=df.set_index(df.columns[0])[col_to_plot])
-        except:
-            st.write("--")
-    
+    st.dataframe(df)
 
     try:
+            if selected_query in query_images:
+                for i, img_path in enumerate(query_images[selected_query], start=1):
+                    st.image(img_path, caption=f"{selected_query} - Image {i}", use_column_width=True)
             
-                if selected_query in query_images:
-    
-                        for i, img_path in enumerate(query_images[selected_query], start=1):
-                            st.image(img_path, caption=f"{selected_query} - Image {i}", use_column_width=True)
+                if df is not None and not df.empty:
+                    numeric_cols = df.select_dtypes(include=['number']).columns.tolist()
+                    if numeric_cols:
+                        col_to_plot = numeric_cols[0]  # Choose first numeric column for visualization
             
+            # Bar chart of the numeric column by first column (usually the category)
+                        st.bar_chart(data=df.set_index(df.columns[0])[col_to_plot])
+
+            # Highest and Lowest values
+                        max_val = df[col_to_plot].max()
+                        max_idx = df[df[col_to_plot] == max_val][df.columns[0]].values[0]
+
+                        min_val = df[col_to_plot].min()
+                        min_idx = df[df[col_to_plot] == min_val][df.columns[0]].values[0]
                     
-                        
+
+                        col1, col2 = st.columns(2)
+                        with col1:
+                            st.metric(label="Highest Value", value=f"{max_val}", delta=f"{max_idx}")
+                        with col2:
+                            st.metric(label="Lowest Value", value=f"{min_val}", delta=f"{min_idx}")
     except:
             ("-")
-    
+
 # ============================
 # TAB 6 — USER LOGIN & DASHBOARD
 # ============================
@@ -859,54 +846,59 @@ elif selected_tab == "👤 User Dashboard":
         user_progress = watch_df[watch_df["user_id"] == user_id]["progress"].mean()
             
         user_content_data = {
-            1: {"movie": "Shadow Protocol", "actor": "Will Smith",
-        "movie_poster": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-24 at 1.40.46 PM.png",
-        "actor_img": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-24 at 1.41.21 PM.png",
+            1: {"movie": "Shadow Protocol",
+ "actor": "Will Smith",
+        "movie_poster": “images/shadowprotocol.jpeg”,
+        "actor_img": "images/willsmith.jpeg",
         "actor_movies": ["Men in Black","I Am Legend","Gemini Man"],
         "similar_movies": ["Crimson Vengeance","The Hollow Manor","Hearts Entwined"]},
-        2: {"movie": "Echoes of Silence", "actor": "Meryl Streep",
-        "movie_poster": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-28 at 8.03.52 AM.png",
-        "actor_img": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 12.15.13 PM.png",
+       
+ 2: {"movie": "Echoes of Silence", "actor": "Meryl Streep",
+        "movie_poster": "images/echoesofsilencw.jpeg",
+        "actor_img": "images/merylstreep.jpeg",
         "actor_movies": ["The Iron Lady","Kramer vs Kramer","The Devil Wears Prada"],
         "similar_movies": ["Forever and Always","Whispers in the Dark","Accidentally Perfect"]},
-        3: {"movie": "Laugh Lines", "actor": "Jim Carrey",
-        "movie_poster": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 12.19.48 PM.png",
-        "actor_img": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 12.20.07 PM.png",
+       
+ 3: {"movie": "Laugh Lines", "actor": "Jim Carrey",
+        "movie_poster": "images/laughlines.jpeg",
+        "actor_img": "images/jimcarrey.jpeg",
         "actor_movies": ["The Mask","Ace Ventura","Dumb and Dumber"],
         "similar_movies": ["Accidentally Perfect","Whispers in the Dark","Forever and Always"]},
-        4: {"movie": "The Haunted Hour", "actor": "Jamie Lee Curtis",
-        "movie_poster": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 12.21.31 PM.png",
-        "actor_img": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 12.22.32 PM.png",
+      
+  4: {"movie": "The Haunted Hour", "actor": "Jamie Lee Curtis",
+        "movie_poster": "images/thehauntedhour.jpeg",
+        "actor_img": "images/jamieleecurtis.jpeg",
         "actor_movies": ["Halloween","Freaky Friday","True Lies"],
         "similar_movies": ["Crimson Vengeance","Whispers in the Dark","The Hollow Manor"]},
-        5: {"movie": "Hearts Entwined", "actor": "Julia Roberts",
-        "movie_poster": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 12.25.08 PM.png",
-        "actor_img": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 12.27.54 PM.png",
+    
+    5: {"movie": "Hearts Entwined", "actor": "Julia Roberts",
+        "movie_poster": "images/heartsentwined.jpeg",
+        "actor_img": "images/juliaroberts.jpeg",
         "actor_movies": ["Pretty Woman","Erin Brockovich","My Best Friend's Wedding"],
         "similar_movies": ["Forever and Always","The Hollow Manor","Accidentally Perfect"]},
         6: {"movie": "Gemini Force", "actor": "Tom Hanks",
-        "movie_poster": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 12.28.55 PM.png",
-        "actor_img": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 12.29.20 PM.png",
+        "movie_poster": "images/geminiman.jpeg",
+        "actor_img": "images/tomhanks.jpeg",
         "actor_movies": ["Forrest Gump","Cast Away","Saving Private Ryan"],
         "similar_movies": ["Shadow Protocol","Laugh Lines","Crimson Vengeance"]},
         7: {"movie": "Forever and Always", "actor": "Emma Stone",
-        "movie_poster": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 12.30.14 PM.png",
-        "actor_img": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 12.30.26 PM.png",
+        "movie_poster": "images/foreverandalways.jpeg",
+        "actor_img": "images/emmastoen.jpeg",
         "actor_movies": ["La La Land","Easy A","The Favourite"],
         "similar_movies": ["Hearts Entwined","Accidentally Perfect","The Hollow Manor"]},
         8: {"movie": "Accidentally Perfect", "actor": "Leonardo DiCaprio",
-        "movie_poster": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 12.31.17 PM.png",
-        "actor_img": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 12.31.53 PM.png",
+        "movie_poster": "images/accidentlyperfect.jpeg",
+        "actor_img": "images/leodicap.jpeg”,
         "actor_movies": ["Inception","Titanic","The Revenant"],
         "similar_movies": ["Shadow Protocol","Laugh Lines","Forever and Always"]},
         9: {"movie": "Whispers in the Dark", "actor": "Scarlett Johansson",
-        "movie_poster": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 12.32.38 PM.png",
-        "actor_img": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 12.32.52 PM.png",
+        "movie_poster": “images/whispersinthedark.jpeg”,
+        "actor_img": "images/scarlettjohanson.jpeg",
         "actor_movies": ["Lucy","Marriage Story","Lost in Translation"],
         "similar_movies": ["Echoes of Silence","Hearts Entwined","Accidentally Perfect"]},
         10: {"movie": "Crimson Vengeance", "actor": "Brad Pitt",
-         "movie_poster": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 12.34.02 PM.png",
-         "actor_img": "/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 12.34.17 PM.png",
+         "movie_poster": "images/crimsonvengeance.jpeg",
+         "actor_img": "images/bradpitt.jpeg",
          "actor_movies": ["Fight Club","World War Z","Once Upon a Time in Hollywood"],
          "similar_movies": ["Shadow Protocol","Gemini Force","Laugh Lines"]}
 }
@@ -946,15 +938,15 @@ elif selected_tab == "👤 User Dashboard":
         recommended_titles = current["similar_movies"]
         
         poster_paths = {
-    "Crimson Vengeance": "/Users/reineepanjabi/Desktop/posters/crimson vengeance.png",
-    "The Hollow Manor": "/Users/reineepanjabi/Desktop/posters/hallow manor.png",
-    "Hearts Entwined": "/Users/reineepanjabi/Desktop/posters/hearts entwined.png",
-    "Forever and Always": "/Users/reineepanjabi/Desktop/posters/forever and always.png",
-    "Whispers in the Dark": "/Users/reineepanjabi/Desktop/posters/whispers in the dark.png",
-    "Accidentally Perfect": "/Users/reineepanjabi/Desktop/posters/accidently perfect.png",
-    "Men in Black":"/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 3.51.55 PM.png",
-    "I Am Legend":"/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 3.51.17 PM.png",
-    "Gemini Man":"/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 12.28.55 PM.png"
+    "Crimson Vengeance": "images/crimsonvengeance.jpeg",
+    "The Hollow Manor": "images/thehallowmanor.jpeg",
+    "Hearts Entwined": "images/heartsentwined.jpeg",
+    "Forever and Always": "images/foreverandalways.jpeg",
+    "Whispers in the Dark": "images/whispersinthedark.jpeg",
+    "Accidentally Perfect": "images/accidentlyperfect.jpeg",
+    "Men in Black":"images/meninblack.jpeg",
+    "I Am Legend":"images/iamlegend.jpeg",
+    "Gemini Man":”images/geminiman.jpeg”
 }
 
         st.write("Because you liked:", current["movie"])
@@ -976,11 +968,36 @@ elif selected_tab == "👤 User Dashboard":
         actor_movies = current["actor_movies"]
         
         poster={"Men in Black":"/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 3.51.55 PM.png",
-        "I Am Legend":"/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 3.51.17 PM.png",
-        "Gemini Man":"/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 12.28.55 PM.png",
-        "The Iron Lady":"/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 3.57.46 PM.png",
-        "Kramer vs Kramer":"/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 3.58.03 PM.png",
-        "The Devil Wears Prada":"/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 3.58.20 PM.png"
+        "I Am Legend":"images/iamlegend.jpeg",
+        "Gemini Man":"images/geminiman.jpeg",
+        "The Iron Lady":"images/theironlady.jpeg",
+        "Kramer vs Kramer":"images/.jpeg",
+        "The Devil Wears Prada":"images/thedevilwearsprada.jpeg",
+“Fight Club":”images/thefightclub.jpeg”,
+"World War Z":”images/worldwarz.jpeg”,
+"Once Upon a Time in Hollywood”:”images/onceuponatimeinhollywood.jpeg”,
+“ Lucy":”images/lucy.jpeg”,
+"Marriage Story":”images/marriagestory.jpeg”,
+"Lost in Translation”:”images/lostintranslation.jpeg”,
+"Inception":”images/inception.jpeg”,
+"Titanic":”images/titanic.jpeg”,
+"The Revenant”:”images/therevenant.jpeg”,
+“La La Land":”images/.lalalandjpeg”,
+"Easy A":”images/.easyajpeg”,
+"The Favourite”:”images/.thefavouritejpeg”,
+“Forrest Gump":”images/forrestgump.jpeg”,
+"Cast Away":”images/castaway.jpeg”,
+"Saving Private Ryan”:”images/savingprivateryan.jpeg”,
+"Pretty Woman":”images/prettywoman.jpeg”
+,"Erin Brockovich":”images/erinbrockovich.jpeg”,
+"My Best Friend's Wedding”:”images/mybsfsbody.jpeg”,
+“Halloween":”images/halloweem.jpeg”,
+"Freaky Friday":”images/freakyfriday.jpeg”,
+"True Lies":”images/truelies.jpeg”
+"The Mask":”images/themask.jpeg”,
+"Ace Ventura":”images/aceventura.jpeg”,
+"Dumb and Dumber":”images/dumbanddumber.jpeg”
+
         }
         
         cols = st.columns(len(actor_movies))
@@ -1051,3 +1068,6 @@ elif selected_tab == "👤 User Dashboard":
         if st.button("🔓 Logout"):
             st.session_state.logged_in_user = None
             st.experimental_rerun()
+
+
+
