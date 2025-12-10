@@ -973,10 +973,10 @@ elif selected_tab == "👤 User Dashboard":
         "The Iron Lady":"images/theironlady.jpeg",
         "Kramer vs Kramer":"images/.jpeg",
         "The Devil Wears Prada":"images/thedevilwearsprada.jpeg",
-“Fight Club":"images/thefightclub.jpeg",
+"Fight Club":"images/thefightclub.jpeg",
 "World War Z":"images/worldwarz.jpeg",
 "Once Upon a Time in Hollywood":"images/onceuponatimeinhollywood.jpeg",
-“ Lucy":"images/lucy.jpeg",
+" Lucy":"images/lucy.jpeg",
 "Marriage Story":"images/marriagestory.jpeg",
 "Lost in Translation":"images/lostintranslation.jpeg",
 "Inception":"images/inception.jpeg",
@@ -985,13 +985,13 @@ elif selected_tab == "👤 User Dashboard":
 “La La Land":"images/.lalalandjpeg",
 "Easy A":"images/.easyajpeg",
 "The Favourite":"images/.thefavouritejpeg",
-“Forrest Gump":"images/forrestgump.jpeg",
+"Forrest Gump":"images/forrestgump.jpeg",
 "Cast Away":"images/castaway.jpeg",
 "Saving Private Ryan":"images/savingprivateryan.jpeg",
 "Pretty Woman":"images/prettywoman.jpeg"
 ,"Erin Brockovich":"images/erinbrockovich.jpeg",
 "My Best Friend's Wedding":"images/mybsfsbody.jpeg",
-“Halloween":"images/halloweem.jpeg",
+"Halloween":"images/halloweem.jpeg",
 "Freaky Friday":"images/freakyfriday.jpeg",
 "True Lies":"images/truelies.jpeg"
 "The Mask":"images/themask.jpeg",
@@ -1068,6 +1068,7 @@ elif selected_tab == "👤 User Dashboard":
         if st.button("🔓 Logout"):
             st.session_state.logged_in_user = None
             st.experimental_rerun()
+
 
 
 
