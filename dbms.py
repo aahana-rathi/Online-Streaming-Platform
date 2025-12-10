@@ -967,7 +967,7 @@ elif selected_tab == "👤 User Dashboard":
         
         actor_movies = current["actor_movies"]
         
-        poster={"Men in Black":"/Users/reineepanjabi/Desktop/Screenshot 2025-10-27 at 3.51.55 PM.png",
+        poster={"Men in Black":"images/meninblack.jpeg",
         "I Am Legend":"images/iamlegend.jpeg",
         "Gemini Man":"images/geminiman.jpeg",
         "The Iron Lady":"images/theironlady.jpeg",
@@ -1068,6 +1068,7 @@ elif selected_tab == "👤 User Dashboard":
         if st.button("🔓 Logout"):
             st.session_state.logged_in_user = None
             st.experimental_rerun()
+
 
 
 
