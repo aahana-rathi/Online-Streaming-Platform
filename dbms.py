@@ -848,7 +848,7 @@ elif selected_tab == "👤 User Dashboard":
         user_content_data = {
             1: {"movie": "Shadow Protocol",
  "actor": "Will Smith",
-        "movie_poster": “images/shadowprotocol.jpeg”,
+        "movie_poster": "images/shadowprotocol.jpeg",
         "actor_img": "images/willsmith.jpeg",
         "actor_movies": ["Men in Black","I Am Legend","Gemini Man"],
         "similar_movies": ["Crimson Vengeance","The Hollow Manor","Hearts Entwined"]},
@@ -1068,6 +1068,7 @@ elif selected_tab == "👤 User Dashboard":
         if st.button("🔓 Logout"):
             st.session_state.logged_in_user = None
             st.experimental_rerun()
+
 
 
 
